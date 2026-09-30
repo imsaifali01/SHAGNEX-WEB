@@ -1,0 +1,2060 @@
+/* ========================================
+   SHAGNEX HERO
+======================================== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 72px 24px 90px;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 12% 10%,
+      rgba(0, 207, 255, 0.075),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 88% 18%,
+      rgba(112, 32, 240, 0.085),
+      transparent 30%
+    ),
+    #060d1c;
+
+  color: #ffffff;
+  overflow: hidden;
+}
+
+
+/* ========================================
+   BACKGROUND GRID
+======================================== */
+
+.grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  opacity: 0.26;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.022) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.022) 1px,
+      transparent 1px
+    );
+
+  background-size: 60px 60px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 88%
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 88%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   GLOWS
+======================================== */
+
+.glowOne,
+.glowTwo {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(110px);
+
+  opacity: 0.8;
+}
+
+.glowOne {
+  top: 10%;
+  left: -80px;
+
+  width: 320px;
+  height: 320px;
+
+  background:
+    rgba(0, 207, 255, 0.065);
+}
+
+.glowTwo {
+  top: 28%;
+  right: -100px;
+
+  width: 380px;
+  height: 380px;
+
+  background:
+    rgba(112, 32, 240, 0.07);
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.container {
+  position: relative;
+  z-index: 2;
+
+  width: min(1180px, 100%);
+
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   HERO TOP
+======================================== */
+
+.heroTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  padding-top: 18px;
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.logoBox {
+  width: 78px;
+  height: 78px;
+
+  margin-bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  border:
+    1px solid rgba(0, 207, 255, 0.14);
+
+  box-shadow:
+    0 0 35px rgba(0, 207, 255, 0.065);
+
+  overflow: hidden;
+
+  animation:
+    logoFloat 5s ease-in-out infinite;
+}
+
+.logoBox img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+
+/* ========================================
+   EYEBROW
+======================================== */
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  color: #00cfff;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.6px;
+  line-height: 1.4;
+}
+
+.eyebrow span {
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #00cfff;
+
+  box-shadow:
+    0 0 10px rgba(0, 207, 255, 0.65);
+}
+
+
+/* ========================================
+   MAIN TITLE
+======================================== */
+
+.heroTop h1 {
+  margin: 19px 0 8px;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(52px, 8vw, 84px);
+
+  line-height: 0.94;
+
+  font-weight: 900;
+
+  letter-spacing: -4px;
+}
+
+.heroTop h1 span {
+  margin-left: 5px;
+
+  background:
+    linear-gradient(
+      105deg,
+      #00cfff,
+      #7020f0
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* ========================================
+   TAGLINE
+======================================== */
+
+.tagline {
+  color: #b7c2d2;
+
+  font-size: 20px;
+  font-weight: 650;
+
+  line-height: 1.4;
+}
+
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.description {
+  max-width: 700px;
+
+  margin: 18px auto 0;
+
+  color: #8190a6;
+
+  font-size: 15px;
+
+  line-height: 1.75;
+}
+
+
+/* ========================================
+   ACTIONS
+======================================== */
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 28px;
+}
+
+.primaryButton,
+.secondaryButton {
+  min-height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 0 20px;
+
+  box-sizing: border-box;
+
+  border-radius: 10px;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease;
+}
+
+.primaryButton {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #00b9e8,
+      #7020f0
+    );
+
+  border:
+    1px solid rgba(0, 207, 255, 0.28);
+
+  box-shadow:
+    0 10px 28px rgba(0, 207, 255, 0.12);
+}
+
+.secondaryButton {
+  color: #ffffff;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.1);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-3px);
+}
+
+.primaryButton:hover {
+  box-shadow:
+    0 15px 36px rgba(0, 207, 255, 0.19);
+}
+
+.secondaryButton:hover {
+  background:
+    rgba(0, 207, 255, 0.045);
+
+  border-color:
+    rgba(0, 207, 255, 0.28);
+}
+
+.primaryButton span,
+.secondaryButton span,
+.exploreButton span,
+.aboutWorkButton span {
+  color: #00cfff;
+
+  font-size: 16px;
+}
+
+
+/* ========================================
+   VIDEO SECTION
+======================================== */
+
+.videoSection {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.82fr)
+    minmax(0, 1.18fr);
+
+  align-items: center;
+
+  gap: 58px;
+
+  margin-top: 92px;
+}
+
+.videoInfo {
+  max-width: 510px;
+}
+
+.videoLabel,
+.buildLabel,
+.techLabel,
+.aboutWorkLabel {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: #00cfff;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.videoLabel span,
+.buildLabel span,
+.techLabel span,
+.aboutWorkLabel span {
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #00cfff;
+
+  box-shadow:
+    0 0 10px rgba(0, 207, 255, 0.6);
+}
+
+.videoInfo h2 {
+  margin: 16px 0 15px;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(35px, 4vw, 52px);
+
+  line-height: 1.04;
+
+  letter-spacing: -2.2px;
+
+  font-weight: 850;
+}
+
+.videoInfo h2 strong,
+.buildHeader h2 strong,
+.techHeader h2 strong,
+.aboutWorkContent h2 strong {
+  background:
+    linear-gradient(
+      105deg,
+      #00cfff,
+      #7020f0
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.videoInfo > p {
+  margin: 0;
+
+  color: #8190a6;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+/* ========================================
+   VIDEO FEATURES
+======================================== */
+
+.videoFeatures {
+  display: flex;
+  flex-direction: column;
+
+  gap: 11px;
+
+  margin-top: 25px;
+}
+
+.videoFeatures > div {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+}
+
+.videoFeatures span {
+  color: #00cfff;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.videoFeatures p {
+  margin: 0;
+
+  color: #a0adbf;
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.exploreButton {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 26px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.exploreButton:hover {
+  color: #00cfff;
+
+  transform:
+    translateX(3px);
+}
+
+
+/* ========================================
+   VIDEO WRAPPER
+======================================== */
+
+.videoWrapper {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 17px;
+
+  background: #091223;
+
+  border:
+    1px solid rgba(0, 207, 255, 0.13);
+
+  box-shadow:
+    0 28px 75px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ========================================
+   BROWSER BAR
+======================================== */
+
+.browserBar {
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  background:
+    rgba(9, 19, 36, 0.98);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.06);
+}
+
+.browserDots {
+  display: flex;
+  gap: 6px;
+}
+
+.browserDots i {
+  width: 7px;
+  height: 7px;
+
+  display: block;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.2);
+}
+
+.browserAddress {
+  margin-left: 19px;
+
+  color: #718097;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.live {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  margin-left: auto;
+
+  color: #8190a6;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.live span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #00cfff;
+
+  box-shadow:
+    0 0 8px rgba(0, 207, 255, 0.6);
+}
+
+
+/* ========================================
+   VIDEO FRAME
+======================================== */
+
+.videoFrame {
+  position: relative;
+
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  background: #030812;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.videoOverlay {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 207, 255, 0.035),
+      rgba(112, 32, 240, 0.055)
+    );
+}
+
+.videoCard {
+  position: absolute;
+
+  left: 18px;
+  bottom: 18px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 11px 14px;
+
+  border-radius: 10px;
+
+  background:
+    rgba(6, 13, 28, 0.86);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.videoIcon {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  color: #00cfff;
+
+  background:
+    rgba(0, 207, 255, 0.08);
+
+  font-size: 14px;
+}
+
+.videoCard strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 12px;
+}
+
+.videoCard small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #8190a6;
+
+  font-size: 9px;
+}
+
+
+/* ========================================
+   STATS
+======================================== */
+
+.statsSection {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  align-items: stretch;
+
+  margin-top: 62px;
+
+  padding: 27px 0;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+.statItem {
+  position: relative;
+
+  min-height: 82px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  text-align: center;
+
+  transition:
+    transform 0.22s ease;
+}
+
+.statItem:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  top: 50%;
+
+  width: 1px;
+  height: 45px;
+
+  transform:
+    translateY(-50%);
+
+  background:
+    rgba(255, 255, 255, 0.08);
+}
+
+.statItem:hover {
+  transform:
+    translateY(-3px);
+}
+
+.statItem strong {
+  display: block;
+
+  font-size: 35px;
+
+  line-height: 1;
+
+  font-weight: 850;
+
+  letter-spacing: -1px;
+
+  background:
+    linear-gradient(
+      105deg,
+      #00cfff,
+      #7020f0
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.statItem span {
+  color: #9ba9bb;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+
+  font-weight: 650;
+}
+
+
+/* ========================================
+   WHAT WE BUILD
+======================================== */
+
+.buildSection {
+  width: 100%;
+
+  margin-top: 78px;
+
+  padding-top: 58px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  overflow: hidden;
+}
+
+.buildHeader,
+.techHeader {
+  max-width: 720px;
+
+  margin-bottom: 32px;
+}
+
+.buildLabel,
+.techLabel,
+.aboutWorkLabel {
+  margin-bottom: 14px;
+}
+
+.buildHeader h2,
+.techHeader h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(34px, 4vw, 50px);
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+
+  font-weight: 850;
+}
+
+.buildHeader p,
+.techHeader p {
+  max-width: 650px;
+
+  margin: 17px 0 0;
+
+  color: #8190a6;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+/* ========================================
+   BUILD SLIDER
+======================================== */
+
+.buildSlider,
+.techSlider {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  mask-image:
+    linear-gradient(
+      to right,
+      transparent,
+      black 4%,
+      black 96%,
+      transparent
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      transparent,
+      black 4%,
+      black 96%,
+      transparent
+    );
+}
+
+.buildTrack,
+.techTrack {
+  display: flex;
+
+  width: max-content;
+
+  will-change: transform;
+}
+
+.buildTrack {
+  gap: 18px;
+
+  animation:
+    buildMarquee 30s linear infinite;
+}
+
+.buildSlider:hover .buildTrack,
+.techSlider:hover .techTrack {
+  animation-play-state: paused;
+}
+
+
+/* ========================================
+   BUILD CARD
+======================================== */
+
+.buildItem {
+  flex: 0 0 390px;
+
+  width: 390px;
+  min-height: 185px;
+
+  display: grid;
+
+  grid-template-columns:
+    38px 1fr 30px;
+
+  align-items: start;
+
+  gap: 16px;
+
+  padding: 27px;
+
+  box-sizing: border-box;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  background:
+    rgba(255, 255, 255, 0.024);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 14px;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.buildItem:hover {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 207, 255, 0.065),
+      rgba(112, 32, 240, 0.06)
+    );
+
+  border-color:
+    rgba(0, 207, 255, 0.24);
+
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.16);
+}
+
+.buildNumber {
+  color: #00cfff;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.buildContent h3 {
+  margin: 0 0 9px;
+
+  color: #ffffff;
+
+  font-size: 19px;
+
+  line-height: 1.25;
+
+  font-weight: 800;
+}
+
+.buildContent p {
+  margin: 0;
+
+  color: #8190a6;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+}
+
+.buildArrow {
+  width: 29px;
+  height: 29px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #00cfff;
+
+  background:
+    rgba(0, 207, 255, 0.04);
+
+  border:
+    1px solid rgba(0, 207, 255, 0.14);
+
+  border-radius: 7px;
+
+  font-size: 14px;
+}
+
+@keyframes buildMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform:
+      translateX(
+        calc(-50% - 9px)
+      );
+  }
+}
+
+
+/* ========================================
+   TECHNOLOGIES
+======================================== */
+
+.techSection {
+  width: 100%;
+
+  margin-top: 78px;
+
+  padding-top: 58px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  overflow: hidden;
+}
+
+.techTrack {
+  gap: 14px;
+
+  animation:
+    technologyMarquee 28s linear infinite;
+}
+
+.techItem {
+  flex: 0 0 170px;
+
+  width: 170px;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 11px;
+
+  padding: 0 18px;
+
+  box-sizing: border-box;
+
+  color: #ffffff;
+
+  background:
+    rgba(255, 255, 255, 0.024);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 12px;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.techItem:hover {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 207, 255, 0.065),
+      rgba(112, 32, 240, 0.065)
+    );
+
+  border-color:
+    rgba(0, 207, 255, 0.26);
+
+  box-shadow:
+    0 12px 30px rgba(0, 207, 255, 0.055);
+
+  transform:
+    translateY(-4px);
+}
+
+.techIcon {
+  width: 28px;
+  height: 28px;
+
+  flex-shrink: 0;
+
+  color: #ffffff;
+
+  transition:
+    color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.techItem:hover .techIcon {
+  color: #00cfff;
+
+  transform:
+    scale(1.07);
+}
+
+.techItem span {
+  color: #a8b4c6;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.22s ease;
+}
+
+.techItem:hover span {
+  color: #ffffff;
+}
+
+@keyframes technologyMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform:
+      translateX(
+        calc(-50% - 7px)
+      );
+  }
+}
+
+
+/* ========================================
+   ABOUT OUR WORK
+======================================== */
+
+.aboutWorkSection {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.08fr)
+    minmax(0, 0.92fr);
+
+  gap: 72px;
+
+  align-items: center;
+
+  margin-top: 82px;
+
+  padding:
+    66px 0;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+.aboutWorkContent {
+  max-width: 680px;
+}
+
+.aboutWorkContent h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(38px, 4.5vw, 58px);
+
+  line-height: 1.02;
+
+  letter-spacing: -2.5px;
+
+  font-weight: 850;
+}
+
+.aboutWorkDescription {
+  max-width: 650px;
+
+  margin: 20px 0 0;
+
+  color: #8190a6;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+.aboutWorkButton {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 28px;
+
+  padding: 13px 18px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 207, 255, 0.1),
+      rgba(112, 32, 240, 0.1)
+    );
+
+  border:
+    1px solid rgba(0, 207, 255, 0.19);
+
+  border-radius: 9px;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.aboutWorkButton:hover {
+  transform:
+    translateY(-3px);
+
+  border-color:
+    rgba(0, 207, 255, 0.38);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 207, 255, 0.16),
+      rgba(112, 32, 240, 0.15)
+    );
+
+  box-shadow:
+    0 12px 30px rgba(0, 207, 255, 0.07);
+}
+
+
+/* ========================================
+   ABOUT FEATURES
+======================================== */
+
+.aboutWorkFeatures {
+  display: flex;
+  flex-direction: column;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.08);
+}
+
+.aboutWorkFeature {
+  display: grid;
+
+  grid-template-columns:
+    43px 1fr;
+
+  gap: 17px;
+
+  padding: 21px 0;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  transition:
+    padding-left 0.22s ease;
+}
+
+.aboutWorkFeature:hover {
+  padding-left: 6px;
+}
+
+.aboutWorkFeature > span {
+  color: #00cfff;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.aboutWorkFeature h3 {
+  margin: 0 0 6px;
+
+  color: #ffffff;
+
+  font-size: 17px;
+
+  font-weight: 800;
+}
+
+.aboutWorkFeature p {
+  margin: 0;
+
+  color: #718097;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* ========================================
+   TRUST BAR
+======================================== */
+
+.trustBar {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  align-items: center;
+
+  margin-top: 58px;
+
+  padding: 24px 0;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+.trustBar > div {
+  min-height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 11px;
+
+  padding: 0 10px;
+}
+
+.trustBar > div:not(:last-child) {
+  border-right:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+.trustBar span {
+  color: #00cfff;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.trustBar p {
+  margin: 0;
+
+  color: #a0adbf;
+
+  font-size: 12px;
+  font-weight: 650;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 950px) {
+  .hero {
+    padding:
+      62px 22px 75px;
+  }
+
+  .videoSection {
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+
+    margin-top: 82px;
+  }
+
+  .videoInfo {
+    max-width: 720px;
+  }
+
+  .aboutWorkSection {
+    grid-template-columns: 1fr;
+
+    gap: 48px;
+
+    margin-top: 70px;
+
+    padding: 58px 0;
+  }
+
+  .aboutWorkContent,
+  .aboutWorkFeatures {
+    max-width: 720px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: auto;
+
+    padding:
+      58px 16px 55px;
+  }
+
+  .heroTop {
+    padding-top: 10px;
+  }
+
+  .logoBox {
+    width: 70px;
+    height: 70px;
+
+    margin-bottom: 17px;
+
+    border-radius: 16px;
+  }
+
+  .eyebrow {
+    font-size: 8px;
+
+    letter-spacing: 1.1px;
+
+    gap: 8px;
+  }
+
+  .eyebrow span {
+    width: 5px;
+    height: 5px;
+  }
+
+  .heroTop h1 {
+    margin-top: 15px;
+
+    font-size: 48px;
+
+    letter-spacing: -2.7px;
+  }
+
+  .heroTop h1 span {
+    margin-left: 3px;
+  }
+
+  .tagline {
+    font-size: 17px;
+  }
+
+  .description {
+    max-width: 520px;
+
+    margin-top: 15px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  .actions {
+    width: 100%;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    margin-top: 23px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+
+    min-height: 48px;
+
+    font-size: 13px;
+  }
+
+
+  /* VIDEO */
+
+  .videoSection {
+    gap: 32px;
+
+    margin-top: 62px;
+  }
+
+  .videoLabel,
+  .buildLabel,
+  .techLabel,
+  .aboutWorkLabel {
+    font-size: 9px;
+
+    letter-spacing: 1.15px;
+  }
+
+  .videoInfo h2 {
+    margin-top: 14px;
+
+    font-size: 35px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .videoInfo > p {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  .videoFeatures {
+    margin-top: 22px;
+  }
+
+  .videoFeatures p {
+    font-size: 12px;
+  }
+
+  .exploreButton {
+    margin-top: 23px;
+
+    font-size: 12px;
+  }
+
+  .browserBar {
+    height: 37px;
+
+    padding: 0 11px;
+  }
+
+  .browserAddress {
+    margin-left: 14px;
+
+    font-size: 9px;
+  }
+
+  .live {
+    font-size: 8px;
+  }
+
+  .videoCard {
+    left: 11px;
+    bottom: 11px;
+
+    padding: 9px 11px;
+
+    gap: 9px;
+  }
+
+  .videoIcon {
+    width: 28px;
+    height: 28px;
+
+    font-size: 13px;
+  }
+
+  .videoCard strong {
+    font-size: 11px;
+  }
+
+  .videoCard small {
+    font-size: 8px;
+  }
+
+
+  /* STATS */
+
+  .statsSection {
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    margin-top: 42px;
+
+    padding: 20px 0;
+  }
+
+  .statItem {
+    min-height: 82px;
+
+    padding: 7px 5px;
+  }
+
+  .statItem strong {
+    font-size: 29px;
+  }
+
+  .statItem span {
+    font-size: 10px;
+
+    white-space: normal;
+  }
+
+  .statItem:not(:last-child)::after {
+    height: 38px;
+  }
+
+
+  /* BUILD */
+
+  .buildSection {
+    margin-top: 55px;
+
+    padding-top: 42px;
+  }
+
+  .buildHeader,
+  .techHeader {
+    margin-bottom: 27px;
+  }
+
+  .buildHeader h2,
+  .techHeader h2 {
+    font-size: 34px;
+
+    letter-spacing: -1.4px;
+  }
+
+  .buildHeader p,
+  .techHeader p {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  .buildTrack {
+    gap: 13px;
+
+    animation-duration: 24s;
+  }
+
+  .buildItem {
+    flex-basis: 305px;
+
+    width: 305px;
+
+    min-height: 160px;
+
+    grid-template-columns:
+      30px 1fr 27px;
+
+    gap: 11px;
+
+    padding: 21px 17px;
+  }
+
+  .buildNumber {
+    font-size: 11px;
+  }
+
+  .buildContent h3 {
+    font-size: 17px;
+  }
+
+  .buildContent p {
+    font-size: 12px;
+
+    line-height: 1.6;
+  }
+
+  .buildArrow {
+    width: 27px;
+    height: 27px;
+
+    font-size: 13px;
+  }
+
+
+  /* TECHNOLOGIES */
+
+  .techSection {
+    margin-top: 55px;
+
+    padding-top: 42px;
+  }
+
+  .techTrack {
+    gap: 10px;
+
+    animation-duration: 22s;
+  }
+
+  .techItem {
+    flex-basis: 145px;
+
+    width: 145px;
+    height: 60px;
+
+    padding: 0 12px;
+
+    gap: 9px;
+
+    border-radius: 11px;
+  }
+
+  .techIcon {
+    width: 23px;
+    height: 23px;
+  }
+
+  .techItem span {
+    font-size: 11px;
+  }
+
+
+  /* ABOUT */
+
+  .aboutWorkSection {
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+
+    margin-top: 58px;
+
+    padding: 45px 0;
+  }
+
+  .aboutWorkContent h2 {
+    font-size: 35px;
+
+    letter-spacing: -1.6px;
+  }
+
+  .aboutWorkDescription {
+    margin-top: 17px;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+  }
+
+  .aboutWorkButton {
+    width: 100%;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    margin-top: 24px;
+
+    font-size: 12px;
+  }
+
+  .aboutWorkFeature {
+    grid-template-columns:
+      32px 1fr;
+
+    gap: 11px;
+
+    padding: 19px 0;
+  }
+
+  .aboutWorkFeature h3 {
+    font-size: 16px;
+  }
+
+  .aboutWorkFeature p {
+    font-size: 12px;
+
+    line-height: 1.65;
+  }
+
+
+  /* TRUST */
+
+  .trustBar {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    margin-top: 42px;
+
+    padding: 17px 0;
+  }
+
+  .trustBar > div {
+    min-height: 44px;
+
+    padding: 7px;
+  }
+
+  .trustBar > div:nth-child(2) {
+    border-right: none;
+  }
+
+  .trustBar > div:nth-child(1),
+  .trustBar > div:nth-child(2) {
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .trustBar span {
+    font-size: 10px;
+  }
+
+  .trustBar p {
+    font-size: 11px;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+  .hero {
+    padding:
+      52px 12px 45px;
+  }
+
+  .logoBox {
+    width: 64px;
+    height: 64px;
+  }
+
+  .heroTop h1 {
+    font-size: 43px;
+
+    letter-spacing: -2.2px;
+  }
+
+  .tagline {
+    font-size: 15px;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .videoInfo h2 {
+    font-size: 31px;
+  }
+
+  .statsSection {
+    margin-top: 35px;
+
+    padding: 17px 0;
+  }
+
+  .statItem {
+    min-height: 75px;
+  }
+
+  .statItem strong {
+    font-size: 26px;
+  }
+
+  .statItem span {
+    font-size: 9px;
+  }
+
+  .buildSection,
+  .techSection {
+    margin-top: 46px;
+
+    padding-top: 37px;
+  }
+
+  .buildHeader h2,
+  .techHeader h2 {
+    font-size: 29px;
+  }
+
+  .buildHeader p,
+  .techHeader p {
+    font-size: 12px;
+  }
+
+  .buildItem {
+    flex-basis: 280px;
+
+    width: 280px;
+
+    min-height: 150px;
+
+    padding: 19px 14px;
+  }
+
+  .buildContent h3 {
+    font-size: 16px;
+  }
+
+  .buildContent p {
+    font-size: 11px;
+  }
+
+  .techItem {
+    flex-basis: 135px;
+
+    width: 135px;
+    height: 56px;
+  }
+
+  .techIcon {
+    width: 21px;
+    height: 21px;
+  }
+
+  .techItem span {
+    font-size: 10px;
+  }
+
+  .aboutWorkSection {
+    gap: 32px;
+
+    margin-top: 45px;
+
+    padding: 38px 0;
+  }
+
+  .aboutWorkContent h2 {
+    font-size: 30px;
+
+    letter-spacing: -1.2px;
+  }
+
+  .aboutWorkDescription {
+    font-size: 12px;
+  }
+
+  .aboutWorkFeature h3 {
+    font-size: 15px;
+  }
+
+  .aboutWorkFeature p {
+    font-size: 11px;
+  }
+
+  .trustBar p {
+    font-size: 10px;
+  }
+}
+
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+.primaryButton:focus-visible,
+.secondaryButton:focus-visible,
+.exploreButton:focus-visible,
+.buildItem:focus-visible,
+.aboutWorkButton:focus-visible {
+  outline:
+    2px solid #00cfff;
+
+  outline-offset: 3px;
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .logoBox,
+  .buildTrack,
+  .techTrack {
+    animation: none !important;
+  }
+
+  .primaryButton,
+  .secondaryButton,
+  .exploreButton,
+  .buildItem,
+  .techItem,
+  .aboutWorkButton,
+  .aboutWorkFeature,
+  .statItem {
+    transition: none !important;
+  }
+}
+

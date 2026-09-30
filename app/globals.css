@@ -1,0 +1,300 @@
+@import "tailwindcss";
+
+/* ========================================
+   SHAGNEX GLOBAL DESIGN SYSTEM
+======================================== */
+
+:root {
+  /* Core */
+  --background: #050810;
+  --foreground: #f7f9fc;
+
+  /* Typography */
+  --text-primary: #f7f9fc;
+  --text-secondary: #aeb8c8;
+  --text-muted: #6f7b8f;
+
+  /* Brand */
+  --accent-cyan: #38d9ff;
+  --accent-blue: #4f8cff;
+  --accent-purple: #8b5cf6;
+
+  /* Surfaces */
+  --surface-1: #080d17;
+  --surface-2: #0b111d;
+  --surface-3: #0f1624;
+
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-light: rgba(255, 255, 255, 0.1);
+  --border-accent: rgba(79, 140, 255, 0.25);
+
+  /* Gradients */
+  --gradient-brand:
+    linear-gradient(
+      120deg,
+      #38d9ff 0%,
+      #4f8cff 45%,
+      #8b5cf6 100%
+    );
+
+  --gradient-soft:
+    linear-gradient(
+      120deg,
+      rgba(56, 217, 255, 0.12),
+      rgba(139, 92, 246, 0.10)
+    );
+
+  /* Layout */
+  --container-width: 1180px;
+}
+
+
+/* ========================================
+   TAILWIND THEME
+======================================== */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+
+/* ========================================
+   RESET
+======================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+
+  background:
+    radial-gradient(
+      circle at 50% -20%,
+      rgba(79, 140, 255, 0.055),
+      transparent 42%
+    ),
+    var(--background);
+
+  color: var(--foreground);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  line-height: 1.5;
+
+  overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ========================================
+   MEDIA
+======================================== */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+
+/* ========================================
+   LINKS
+======================================== */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ========================================
+   BUTTONS & FORM ELEMENTS
+======================================== */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+  border: 0;
+  background: none;
+  padding: 0;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ========================================
+   HEADINGS & TEXT
+======================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+
+/* ========================================
+   BRAND TEXT UTILITY
+======================================== */
+
+.shagnex-gradient {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+/* ========================================
+   SELECTION
+======================================== */
+
+::selection {
+  background: rgba(79, 140, 255, 0.24);
+  color: #ffffff;
+}
+
+
+/* ========================================
+   SCROLLBAR
+======================================== */
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color:
+    rgba(79, 140, 255, 0.35)
+    var(--background);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(56, 217, 255, 0.45),
+      rgba(139, 92, 246, 0.45)
+    );
+
+  border-radius: 999px;
+  border: 2px solid var(--background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(56, 217, 255, 0.7),
+      rgba(139, 92, 246, 0.7)
+    );
+}
+
+
+/* ========================================
+   FOCUS ACCESSIBILITY
+======================================== */
+
+:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 3px;
+}
+
+
+/* ========================================
+   MOBILE TOUCH
+======================================== */
+
+@media (max-width: 700px) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    min-width: 320px;
+  }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+}

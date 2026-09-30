@@ -1,0 +1,710 @@
+/* ========================================
+   SHAGNEX NAVBAR
+======================================== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 1000;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+  width: min(1180px, calc(100% - 40px));
+  min-height: 72px;
+
+  margin: 14px auto 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 16px;
+
+  box-sizing: border-box;
+
+  background:
+    rgba(6, 13, 28, 0.86);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 16px;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  flex-shrink: 0;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.92;
+}
+
+.logoImage {
+  width: 46px;
+  height: 46px;
+
+  display: block;
+
+  flex-shrink: 0;
+
+  object-fit: contain;
+
+  border-radius: 9px;
+}
+
+.logoMain {
+  color: #ffffff;
+
+  font-size: 20px;
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: -0.7px;
+}
+
+.logoWeb {
+  margin-left: -4px;
+
+  font-size: 15px;
+  line-height: 1;
+
+  font-weight: 500;
+
+  background:
+    linear-gradient(
+      105deg,
+      #00cfff,
+      #7020f0
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* ========================================
+   DESKTOP NAVIGATION
+======================================== */
+
+.desktopNav {
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+
+  margin-left: auto;
+  margin-right: 28px;
+}
+
+.navLink {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding: 8px 0;
+
+  color: #9aa7ba;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease;
+}
+
+.navLink::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 1px;
+
+  width: 0;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #00cfff,
+      #7020f0
+    );
+
+  transform:
+    translateX(-50%);
+
+  transition:
+    width 0.25s ease;
+}
+
+.navLink:hover {
+  color: #ffffff;
+}
+
+.navLink:hover::after {
+  width: 18px;
+}
+
+
+/* ========================================
+   ACTIVE NAVIGATION
+======================================== */
+
+.activeNavLink {
+  color: #ffffff;
+}
+
+.activeNavLink::after {
+  width: 18px;
+}
+
+
+/* ========================================
+   DESKTOP CTA
+======================================== */
+
+.cta {
+  min-height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 17px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      105deg,
+      #00cfff,
+      #7020f0
+    );
+
+  box-shadow:
+    0 8px 24px rgba(0, 207, 255, 0.12);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+
+  filter: brightness(1.06);
+
+  box-shadow:
+    0 12px 30px rgba(0, 207, 255, 0.2);
+}
+
+.arrow {
+  display: inline-flex;
+
+  font-size: 15px;
+  line-height: 1;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.cta:hover .arrow {
+  transform:
+    translate(2px, -2px);
+}
+
+
+/* ========================================
+   MOBILE MENU BUTTON
+======================================== */
+
+.menuButton {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.menuButton:hover {
+  background:
+    rgba(0, 207, 255, 0.06);
+
+  border-color:
+    rgba(0, 207, 255, 0.22);
+}
+
+.menuButtonActive {
+  background:
+    rgba(0, 207, 255, 0.07);
+
+  border-color:
+    rgba(0, 207, 255, 0.25);
+}
+
+
+/* ========================================
+   HAMBURGER LINES
+======================================== */
+
+.line,
+.lineOpen1,
+.lineOpen2,
+.lineOpen3 {
+  width: 18px;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.2s ease;
+}
+
+.lineOpen1 {
+  transform:
+    translateY(7px)
+    rotate(45deg);
+}
+
+.lineOpen2 {
+  opacity: 0;
+}
+
+.lineOpen3 {
+  transform:
+    translateY(-7px)
+    rotate(-45deg);
+}
+
+
+/* ========================================
+   MOBILE MENU
+======================================== */
+
+.mobileMenu {
+  display: none;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+  .navbar {
+    width:
+      min(
+        1180px,
+        calc(100% - 32px)
+      );
+  }
+
+  .desktopNav {
+    gap: 22px;
+
+    margin-right: 20px;
+  }
+
+  .navLink {
+    font-size: 12px;
+  }
+
+  .cta {
+    padding: 0 14px;
+
+    font-size: 12px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+  .navbar {
+    width:
+      calc(100% - 24px);
+
+    min-height: 64px;
+
+    margin-top: 10px;
+
+    padding:
+      8px 10px 8px 12px;
+
+    border-radius: 14px;
+  }
+
+  .logo {
+    gap: 7px;
+  }
+
+  .logoImage {
+    width: 42px;
+    height: 42px;
+  }
+
+  .logoMain {
+    font-size: 18px;
+
+    letter-spacing: -0.6px;
+  }
+
+  .logoWeb {
+    font-size: 14px;
+  }
+
+  .desktopNav,
+  .cta {
+    display: none;
+  }
+
+  .menuButton {
+    display: flex;
+  }
+
+
+  /* ==============================
+     MOBILE DROPDOWN
+  ============================== */
+
+  .mobileMenu {
+    position: absolute;
+
+    top: calc(100% + 8px);
+
+    left: 12px;
+    right: 12px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 10px;
+
+    background:
+      rgba(6, 13, 28, 0.97);
+
+    border:
+      1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 15px;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+      0 18px 45px rgba(0, 0, 0, 0.35);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform:
+      translateY(-8px)
+      scale(0.98);
+
+    transform-origin: top;
+
+    transition:
+      opacity 0.2s ease,
+      visibility 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .mobileMenuOpen {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+
+  /* ==============================
+     MOBILE LINKS
+  ============================== */
+
+  .mobileLinks {
+    display: flex;
+
+    flex-direction: column;
+  }
+
+  .mobileLink {
+    min-height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 13px;
+
+    color: #9aa7ba;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    border-radius: 9px;
+
+    transition:
+      color 0.2s ease,
+      background 0.2s ease,
+      padding 0.2s ease;
+  }
+
+  .mobileLink:hover {
+    color: #ffffff;
+
+    background:
+      rgba(255, 255, 255, 0.035);
+
+    padding-left: 16px;
+  }
+
+  .activeMobileLink {
+    color: #ffffff;
+
+    background:
+      rgba(0, 207, 255, 0.055);
+  }
+
+  .mobileArrow {
+    color: #617086;
+
+    font-size: 16px;
+
+    transition:
+      color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .mobileLink:hover .mobileArrow,
+  .activeMobileLink .mobileArrow {
+    color: #00cfff;
+  }
+
+  .mobileLink:hover .mobileArrow {
+    transform:
+      translateX(3px);
+  }
+
+
+  /* ==============================
+     MOBILE CTA
+  ============================== */
+
+  .mobileCta {
+    min-height: 48px;
+
+    margin-top: 8px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 15px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    border-radius: 9px;
+
+    background:
+      linear-gradient(
+        105deg,
+        #00cfff,
+        #7020f0
+      );
+
+    box-shadow:
+      0 8px 22px rgba(0, 207, 255, 0.12);
+
+    transition:
+      transform 0.2s ease,
+      filter 0.2s ease;
+  }
+
+  .mobileCta:hover {
+    filter: brightness(1.06);
+
+    transform:
+      translateY(-1px);
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+  .navbar {
+    width:
+      calc(100% - 16px);
+
+    min-height: 60px;
+
+    margin-top: 8px;
+
+    padding:
+      7px 8px 7px 10px;
+  }
+
+  .logoImage {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logoMain {
+    font-size: 17px;
+  }
+
+  .logoWeb {
+    font-size: 13px;
+  }
+
+  .menuButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mobileMenu {
+    left: 8px;
+    right: 8px;
+  }
+}
+
+
+/* ========================================
+   KEYBOARD ACCESSIBILITY
+======================================== */
+
+.logo:focus-visible,
+.navLink:focus-visible,
+.cta:focus-visible,
+.menuButton:focus-visible,
+.mobileLink:focus-visible,
+.mobileCta:focus-visible {
+  outline:
+    2px solid #00cfff;
+
+  outline-offset: 3px;
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .logo,
+  .navLink,
+  .navLink::after,
+  .cta,
+  .arrow,
+  .menuButton,
+  .line,
+  .lineOpen1,
+  .lineOpen2,
+  .lineOpen3,
+  .mobileMenu,
+  .mobileLink,
+  .mobileArrow,
+  .mobileCta {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,1424 @@
+/* ========================================
+   SHAGNEX SERVICES PAGE
+======================================== */
+
+.page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #060d1c;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   SHARED EYEBROW
+======================================== */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #00cfff;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+
+  width: 18px;
+  height: 1px;
+
+  background: #00cfff;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+  position: relative;
+
+  padding: 125px 0 105px;
+
+  background:
+    radial-gradient(
+      circle at 20% 25%,
+      rgba(0, 207, 255, 0.075),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 82% 35%,
+      rgba(112, 32, 240, 0.085),
+      transparent 30%
+    );
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: min(900px, 90%);
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+}
+
+.hero h1 {
+  max-width: 850px;
+
+  margin: 22px 0 24px;
+
+  font-size: clamp(48px, 7vw, 82px);
+
+  font-weight: 800;
+  line-height: 0.98;
+
+  letter-spacing: -3.8px;
+}
+
+.hero h1 span,
+.sectionHeading h2 span,
+.pricingHeading h2 span,
+.processHeading h2 span,
+.customProject h3 span,
+.ctaBox h2 span {
+  background:
+    linear-gradient(
+      105deg,
+      #00cfff 0%,
+      #7020f0 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.heroText {
+  max-width: 680px;
+
+  margin: 0;
+
+  color: #8e9bb0;
+
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.heroActions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-top: 34px;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  min-height: 48px;
+
+  padding: 0 20px;
+
+  border-radius: 9px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.primaryButton {
+  color: #03101c;
+
+  background:
+    linear-gradient(
+      105deg,
+      #00cfff,
+      #6e35f5
+    );
+
+  box-shadow:
+    0 12px 30px rgba(0, 207, 255, 0.12);
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 16px 34px rgba(0, 207, 255, 0.2);
+}
+
+.secondaryButton {
+  color: #d8e0ec;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.1);
+
+  background:
+    rgba(255, 255, 255, 0.025);
+}
+
+.secondaryButton:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(0, 207, 255, 0.3);
+
+  background:
+    rgba(0, 207, 255, 0.05);
+}
+
+
+/* ========================================
+   SERVICES SECTION
+======================================== */
+
+.servicesSection {
+  padding: 110px 0 120px;
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 50px;
+
+  margin-bottom: 48px;
+}
+
+.sectionHeading h2,
+.pricingHeading h2,
+.processHeading h2 {
+  margin: 17px 0 0;
+
+  font-size: clamp(38px, 5vw, 58px);
+
+  font-weight: 800;
+  line-height: 1.02;
+
+  letter-spacing: -2.5px;
+}
+
+.sectionHeading > p {
+  max-width: 390px;
+
+  margin: 0;
+
+  color: #8190a6;
+
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+
+/* ========================================
+   SERVICE GRID
+======================================== */
+
+.serviceGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.serviceCard {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 390px;
+
+  padding: 28px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.075);
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.012)
+    );
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.serviceCard::before {
+  content: "";
+
+  position: absolute;
+
+  top: -100px;
+  right: -100px;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 207, 255, 0.08),
+      transparent 68%
+    );
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(0, 207, 255, 0.2);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0, 207, 255, 0.045),
+      rgba(255, 255, 255, 0.015)
+    );
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.18);
+}
+
+.serviceCard:hover::before {
+  opacity: 1;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.serviceNumber {
+  color: #00cfff;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.cardArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  color: #8c9ab0;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 8px;
+
+  font-size: 15px;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.serviceCard:hover .cardArrow {
+  color: #00cfff;
+
+  border-color:
+    rgba(0, 207, 255, 0.25);
+
+  transform: translate(2px, -2px);
+}
+
+.serviceCard h3 {
+  position: relative;
+
+  margin: 42px 0 12px;
+
+  font-size: 24px;
+  font-weight: 800;
+
+  letter-spacing: -0.7px;
+}
+
+.serviceCard > p {
+  position: relative;
+
+  max-width: 500px;
+
+  margin: 0;
+
+  color: #8190a6;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.serviceCard ul {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px 18px;
+
+  margin: 25px 0 28px;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.serviceCard li {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 8px;
+
+  color: #a8b4c5;
+
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.serviceCard li span,
+.planFeatures li span {
+  flex-shrink: 0;
+
+  color: #00cfff;
+
+  font-weight: 800;
+}
+
+.serviceLink {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  width: fit-content;
+
+  margin-top: auto;
+
+  color: #dce6f3;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+.serviceLink:hover {
+  gap: 13px;
+
+  color: #00cfff;
+}
+
+
+/* ========================================
+   PRICING SECTION
+======================================== */
+
+.pricingSection {
+  padding: 115px 0 120px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.055);
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(112, 32, 240, 0.055),
+      transparent 30%
+    );
+}
+
+.pricingHeading {
+  max-width: 650px;
+
+  margin-bottom: 50px;
+}
+
+.pricingHeading p,
+.processHeading p {
+  max-width: 570px;
+
+  margin: 22px 0 0;
+
+  color: #8190a6;
+
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+
+/* ========================================
+   PRICING GRID
+======================================== */
+
+.pricingGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+
+  align-items: stretch;
+}
+
+.pricingCard {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 30px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.075);
+
+  border-radius: 15px;
+
+  background:
+    rgba(255, 255, 255, 0.018);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.pricingCard:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(255, 255, 255, 0.14);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.16);
+}
+
+.popularCard {
+  border-color:
+    rgba(0, 207, 255, 0.35);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0, 207, 255, 0.055),
+      rgba(112, 32, 240, 0.035)
+    );
+
+  box-shadow:
+    0 18px 55px rgba(0, 207, 255, 0.07);
+}
+
+.popularCard:hover {
+  border-color:
+    rgba(0, 207, 255, 0.5);
+}
+
+.popularBadge {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  padding: 6px 10px;
+
+  border:
+    1px solid rgba(0, 207, 255, 0.2);
+
+  border-radius: 999px;
+
+  color: #00cfff;
+
+  background:
+    rgba(0, 207, 255, 0.07);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
+}
+
+
+/* ========================================
+   PLAN HEADER
+======================================== */
+
+.planName {
+  color: #9aa8bb;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+}
+
+.price {
+  margin: 17px 0 5px;
+
+  color: #ffffff;
+
+  font-size: 39px;
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -1.8px;
+}
+
+.priceLabel {
+  display: block;
+
+  margin-bottom: 13px;
+
+  color: #00cfff;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.planHeader p {
+  min-height: 62px;
+
+  margin: 0;
+
+  color: #8190a6;
+
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+
+/* ========================================
+   COST BREAKDOWN
+======================================== */
+
+.costBox {
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+
+  margin-top: 20px;
+
+  padding: 14px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.065);
+
+  border-radius: 9px;
+
+  background:
+    rgba(0, 0, 0, 0.12);
+}
+
+.costRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  min-height: 20px;
+
+  color: #8e9bb0;
+
+  font-size: 11px;
+}
+
+.costRow span {
+  line-height: 1.4;
+}
+
+.costRow strong {
+  color: #dce6f3;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.costRow small {
+  color: #5f6d81;
+
+  font-size: 9px;
+  font-weight: 500;
+}
+
+
+/* ========================================
+   PLAN DIVIDER
+======================================== */
+
+.planDivider {
+  width: 100%;
+  height: 1px;
+
+  margin: 25px 0;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+}
+
+
+/* ========================================
+   PLAN FEATURES
+======================================== */
+
+.planFeatures {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  margin: 0 0 30px;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.planFeatures li {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 9px;
+
+  color: #a8b4c5;
+
+  font-size: 12px;
+
+  line-height: 1.45;
+}
+
+
+/* ========================================
+   PLAN BUTTONS
+======================================== */
+
+.planButton,
+.planPrimaryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  width: 100%;
+  min-height: 45px;
+
+  margin-top: auto;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.planButton {
+  color: #dce6f3;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  background:
+    rgba(255, 255, 255, 0.025);
+}
+
+.planButton:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(0, 207, 255, 0.25);
+
+  background:
+    rgba(0, 207, 255, 0.05);
+}
+
+.planPrimaryButton {
+  color: #03101c;
+
+  background:
+    linear-gradient(
+      105deg,
+      #00cfff,
+      #6e35f5
+    );
+
+  box-shadow:
+    0 10px 28px rgba(0, 207, 255, 0.12);
+}
+
+.planPrimaryButton:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 32px rgba(0, 207, 255, 0.2);
+}
+
+
+/* ========================================
+   PRICING NOTE
+======================================== */
+
+.pricingNote {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 10px;
+
+  max-width: 850px;
+
+  margin: 25px auto 0;
+
+  padding: 15px 18px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.055);
+
+  border-radius: 9px;
+
+  background:
+    rgba(255, 255, 255, 0.015);
+}
+
+.pricingNote > span {
+  flex-shrink: 0;
+
+  color: #00cfff;
+}
+
+.pricingNote p {
+  margin: 0;
+
+  color: #718096;
+
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+
+/* ========================================
+   CUSTOM PROJECT
+======================================== */
+
+.customProject {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  margin-top: 70px;
+
+  padding: 42px 45px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.075);
+
+  border-radius: 16px;
+
+  background:
+    radial-gradient(
+      circle at 85% 50%,
+      rgba(112, 32, 240, 0.09),
+      transparent 32%
+    ),
+    rgba(255, 255, 255, 0.018);
+}
+
+.customProject h3 {
+  margin: 15px 0 12px;
+
+  font-size: 31px;
+  line-height: 1.05;
+
+  letter-spacing: -1.2px;
+}
+
+.customProject p {
+  max-width: 620px;
+
+  margin: 0;
+
+  color: #8190a6;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.customButton,
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 11px;
+
+  flex-shrink: 0;
+
+  min-height: 47px;
+
+  padding: 0 19px;
+
+  border-radius: 8px;
+
+  color: #03101c;
+
+  background:
+    linear-gradient(
+      105deg,
+      #00cfff,
+      #6e35f5
+    );
+
+  font-size: 12px;
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.customButton:hover,
+.ctaButton:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 30px rgba(0, 207, 255, 0.18);
+}
+
+
+/* ========================================
+   PROCESS
+======================================== */
+
+.processSection {
+  padding: 120px 0;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.055);
+}
+
+.processHeading {
+  max-width: 650px;
+
+  margin-bottom: 55px;
+}
+
+.processGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 1px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.075);
+
+  border-radius: 15px;
+
+  overflow: hidden;
+
+  background:
+    rgba(255, 255, 255, 0.075);
+}
+
+.processCard {
+  min-height: 230px;
+
+  padding: 28px;
+
+  background: #060d1c;
+
+  transition:
+    background 0.25s ease;
+}
+
+.processCard:hover {
+  background:
+    rgba(0, 207, 255, 0.025);
+}
+
+.processNumber {
+  display: inline-block;
+
+  margin-bottom: 50px;
+
+  color: #00cfff;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.processCard h3 {
+  margin: 0 0 10px;
+
+  color: #ffffff;
+
+  font-size: 19px;
+  font-weight: 800;
+
+  letter-spacing: -0.4px;
+}
+
+.processCard p {
+  margin: 0;
+
+  color: #718096;
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   FINAL CTA
+======================================== */
+
+.ctaSection {
+  padding: 0 0 120px;
+}
+
+.ctaBox {
+  position: relative;
+
+  padding: 75px 40px;
+
+  text-align: center;
+
+  border:
+    1px solid rgba(0, 207, 255, 0.13);
+
+  border-radius: 18px;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(0, 207, 255, 0.09),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(112, 32, 240, 0.08),
+      transparent 45%
+    ),
+    rgba(255, 255, 255, 0.018);
+
+  overflow: hidden;
+}
+
+.ctaBox h2 {
+  margin: 20px 0 18px;
+
+  font-size: clamp(38px, 5vw, 57px);
+
+  font-weight: 800;
+  line-height: 1.02;
+
+  letter-spacing: -2.5px;
+}
+
+.ctaBox p {
+  max-width: 610px;
+
+  margin: 0 auto 30px;
+
+  color: #8190a6;
+
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.ctaButton {
+  min-height: 49px;
+
+  padding: 0 22px;
+}
+
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+.primaryButton:focus-visible,
+.secondaryButton:focus-visible,
+.serviceLink:focus-visible,
+.planButton:focus-visible,
+.planPrimaryButton:focus-visible,
+.customButton:focus-visible,
+.ctaButton:focus-visible {
+  outline:
+    2px solid #00cfff;
+
+  outline-offset: 3px;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 950px) {
+  .container {
+    width: min(100% - 40px, 760px);
+  }
+
+  .hero {
+    padding: 105px 0 90px;
+  }
+
+  .sectionHeading {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  .sectionHeading > p {
+    max-width: 600px;
+  }
+
+  .pricingGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pricingCard:last-child {
+    grid-column: span 2;
+  }
+
+  .processGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .customProject {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .customButton {
+    width: 100%;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+  .container {
+    width: min(100% - 32px, 520px);
+  }
+
+  .hero {
+    padding: 88px 0 75px;
+  }
+
+  .hero h1 {
+    margin-top: 18px;
+
+    font-size: clamp(43px, 13vw, 62px);
+
+    letter-spacing: -2.5px;
+  }
+
+  .heroText {
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+  .heroActions {
+    align-items: stretch;
+    flex-direction: column;
+
+    max-width: 330px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
+  .servicesSection,
+  .pricingSection,
+  .processSection {
+    padding: 80px 0;
+  }
+
+  .sectionHeading,
+  .pricingHeading,
+  .processHeading {
+    margin-bottom: 35px;
+  }
+
+  .sectionHeading h2,
+  .pricingHeading h2,
+  .processHeading h2 {
+    font-size: 39px;
+
+    letter-spacing: -1.8px;
+  }
+
+  .serviceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .serviceCard {
+    min-height: auto;
+
+    padding: 24px;
+  }
+
+  .serviceCard h3 {
+    margin-top: 35px;
+
+    font-size: 22px;
+  }
+
+  .serviceCard ul {
+    grid-template-columns: 1fr;
+
+    margin-top: 22px;
+  }
+
+  .pricingGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricingCard:last-child {
+    grid-column: auto;
+  }
+
+  .pricingCard {
+    padding: 25px;
+  }
+
+  .popularBadge {
+    top: 15px;
+    right: 15px;
+  }
+
+  .price {
+    font-size: 35px;
+  }
+
+  .costBox {
+    margin-top: 17px;
+  }
+
+  .costRow {
+    font-size: 11px;
+  }
+
+  .customProject {
+    margin-top: 50px;
+
+    padding: 30px 24px;
+  }
+
+  .customProject h3 {
+    font-size: 27px;
+  }
+
+  .customButton {
+    width: 100%;
+  }
+
+  .processGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .processCard {
+    min-height: auto;
+
+    padding: 25px;
+  }
+
+  .processNumber {
+    margin-bottom: 35px;
+  }
+
+  .ctaSection {
+    padding-bottom: 80px;
+  }
+
+  .ctaBox {
+    padding: 55px 22px;
+  }
+
+  .ctaBox h2 {
+    font-size: 39px;
+
+    letter-spacing: -1.8px;
+  }
+
+  .ctaBox p {
+    font-size: 13px;
+  }
+
+  .ctaButton {
+    width: 100%;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  .hero {
+    padding-top: 75px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+
+    letter-spacing: -2px;
+  }
+
+  .sectionHeading h2,
+  .pricingHeading h2,
+  .processHeading h2,
+  .ctaBox h2 {
+    font-size: 35px;
+  }
+
+  .serviceCard {
+    padding: 21px;
+  }
+
+  .serviceCard h3 {
+    font-size: 20px;
+  }
+
+  .pricingCard {
+    padding: 22px;
+  }
+
+  .customProject {
+    padding: 26px 20px;
+  }
+
+  .ctaBox {
+    padding: 48px 18px;
+  }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .serviceCard,
+  .pricingCard,
+  .processCard,
+  .primaryButton,
+  .secondaryButton,
+  .serviceLink,
+  .planButton,
+  .planPrimaryButton,
+  .customButton,
+  .ctaButton {
+    transition: none;
+  }
+}
