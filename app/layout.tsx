@@ -5,9 +5,13 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
-  title: "SHAGNEX Web | Websites That Grow Businesses",
+  metadataBase: new URL("https://www.shagnexweb.site"),
+  title: "SHAGNEX Web | Web Development & Digital Solutions",
   description:
-    "SHAGNEX Web designs and develops modern websites that help businesses grow online.",
+    "SHAGNEX Web builds modern websites, web applications, and digital solutions that help businesses grow online.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({

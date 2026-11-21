@@ -129,8 +129,8 @@ export default function Footer() {
 
             <div className={styles.contactLinks}>
 
-              <a href="mailto:hello@shagnexweb.com">
-                hello@shagnexweb.com
+              <a href="mailto:shagnexweb.site@gmail.com">
+                shagnexweb.site@gmail.com
               </a>
 
               <Link href="/contact">

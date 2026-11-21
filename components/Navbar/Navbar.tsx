@@ -8,7 +8,7 @@ import { useState } from "react";
 import styles from "./Navbar.module.css";
 
 const navItems = [
-  { name: "Home", href: "/home" },
+  { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
   { name: "Work", href: "/work" },
   { name: "About", href: "/about" },
@@ -38,7 +38,7 @@ export default function Navbar() {
       >
         {/* Logo */}
         <Link
-          href="/home"
+          href="/"
           className={styles.logo}
           onClick={closeMenu}
           aria-label="SHAGNEX Web Home"
