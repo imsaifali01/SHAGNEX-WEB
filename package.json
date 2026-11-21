@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "node scripts/server-with-links.mjs dev",
+    "build": "next build --webpack",
+    "start": "node scripts/server-with-links.mjs start",
+    "start:network": "node scripts/server-with-links.mjs start",
     "lint": "eslint"
   },
   "dependencies": {

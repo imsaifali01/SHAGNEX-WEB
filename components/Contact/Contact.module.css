@@ -659,6 +659,18 @@
   line-height: 1.6;
 }
 
+.formError {
+  margin: 12px 0 0;
+
+  color: #ff9b9b;
+
+  text-align: center;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
 
 /* ========================================
    RIGHT SIDE
@@ -727,6 +739,13 @@
   font-size: 12px;
 
   font-weight: 900;
+}
+
+.companyLogoImage {
+  width: 34px;
+  height: 34px;
+
+  object-fit: contain;
 }
 
 

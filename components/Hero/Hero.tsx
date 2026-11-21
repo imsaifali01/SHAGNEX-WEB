@@ -109,15 +109,13 @@ function StatCounter({
   suffix: string;
   label: string;
 }) {
-  const [count, setCount] = useState(target);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     let animationFrame = 0;
 
     const duration = 1400;
     const startTime = performance.now();
-
-    setCount(0);
 
     const animate = (currentTime: number) => {
       const elapsed =

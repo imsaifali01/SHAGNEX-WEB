@@ -5,7 +5,6 @@ import { FormEvent, useState } from "react";
 import {
   FaInstagram,
   FaLinkedinIn,
-  FaGithub,
   FaWhatsapp,
   FaEnvelope,
   FaPhone,
@@ -50,16 +49,51 @@ const faqs = [
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const form = event.currentTarget;
 
-    setSubmitted(true);
+    setSubmitting(true);
+    setSubmitError("");
 
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 4000);
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(
+        "https://formsubmit.co/ajax/shagnexweb.site@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+          },
+          body: formData,
+        },
+      );
+
+      const result = await response.json().catch(() => null);
+      const successfulResponse =
+        result?.success === true || result?.success === "true";
+
+      if (!response.ok || !successfulResponse) {
+        throw new Error("Inquiry submission failed");
+      }
+
+      form.reset();
+      setSubmitted(true);
+
+      window.setTimeout(() => {
+        setSubmitted(false);
+      }, 4000);
+    } catch {
+      setSubmitError(
+        "We could not send your inquiry. Please email us directly at shagnexweb.site@gmail.com.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const toggleFaq = (index: number) => {
@@ -148,6 +182,27 @@ export default function Contact() {
               className={styles.form}
               onSubmit={handleSubmit}
             >
+
+              <input
+                type="hidden"
+                name="_subject"
+                value="SHAGNEX Web — New Enquiry"
+                readOnly
+              />
+
+              <input
+                type="hidden"
+                name="_template"
+                value="table"
+                readOnly
+              />
+
+              <input
+                type="hidden"
+                name="_captcha"
+                value="true"
+                readOnly
+              />
 
               {/* NAME + EMAIL */}
 
@@ -321,16 +376,19 @@ export default function Contact() {
               <button
                 type="submit"
                 className={styles.submit}
+                disabled={submitting}
               >
 
                 <span>
-                  {submitted
+                  {submitting
+                    ? "Sending Inquiry..."
+                    : submitted
                     ? "Inquiry Sent"
                     : "Send Project Inquiry"}
                 </span>
 
                 <span>
-                  {submitted ? "✓" : "↗"}
+                  {submitting ? "…" : submitted ? "✓" : "↗"}
                 </span>
 
               </button>
@@ -375,6 +433,12 @@ export default function Contact() {
                 </p>
               )}
 
+              {submitError && (
+                <p className={styles.formError}>
+                  {submitError}
+                </p>
+              )}
+
             </form>
 
           </div>
@@ -405,7 +469,13 @@ export default function Contact() {
                 </div>
 
                 <div className={styles.companyLogo}>
-                  SW
+                  <Image
+                    src="/images/shagnex-logo.png"
+                    alt="SHAGNEX Web logo"
+                    width={34}
+                    height={34}
+                    className={styles.companyLogoImage}
+                  />
                 </div>
 
               </div>
@@ -414,7 +484,7 @@ export default function Contact() {
               {/* EMAIL */}
 
               <a
-                href="mailto:hello@shagnexweb.com"
+                href="mailto:shagnexweb.site@gmail.com"
                 className={styles.contactItem}
               >
 
@@ -428,7 +498,7 @@ export default function Contact() {
                     EMAIL
                   </small>
 
-                  hello@shagnexweb.com
+                  shagnexweb.site@gmail.com
 
                 </span>
 

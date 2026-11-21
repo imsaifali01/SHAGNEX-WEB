@@ -24,7 +24,7 @@ type Project = {
   stack: string;
   outcome: string;
   image: string;
-  video: string;
+  video?: string;
   hasVideo: boolean;
 };
 
@@ -61,8 +61,6 @@ const projects: Project[] = [
     ],
 
     image: "/images/work/hospital-management.png",
-    video: "/videos/hospital-management.mp4",
-
     hasVideo: false,
   },
 
@@ -98,8 +96,6 @@ const projects: Project[] = [
     ],
 
     image: "/images/work/ecommerce.png",
-    video: "/videos/ecommerce.mp4",
-
     hasVideo: false,
   },
 
@@ -135,8 +131,6 @@ const projects: Project[] = [
     ],
 
     image: "/images/work/bussiness-website.png",
-    video: "/videos/business-website.mp4",
-
     hasVideo: false,
   },
 
@@ -172,8 +166,6 @@ const projects: Project[] = [
     ],
 
     image: "/images/work/gym-platform.png",
-    video: "/videos/gym-platform.mp4",
-
     hasVideo: false,
   },
 ];
@@ -280,7 +272,7 @@ export default function Work() {
                     </div>
 
                     <div className={styles.mediaFrame}>
-                      {project.hasVideo ? (
+                      {project.hasVideo && project.video ? (
                         <video
                           className={styles.projectVideo}
                           autoPlay
@@ -469,7 +461,7 @@ export default function Work() {
               {/* MEDIA */}
 
               <div className={styles.modalMedia}>
-                {selectedProject.hasVideo ? (
+                {selectedProject.hasVideo && selectedProject.video ? (
                   <video
                     className={styles.modalVideo}
                     controls
