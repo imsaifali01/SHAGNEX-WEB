@@ -12,6 +12,27 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: [
+      {
+        url: "/favicon.ico",
+        type: "image/x-icon",
+      },
+      {
+        url: "/favicon-48x48.png",
+        type: "image/png",
+        sizes: "48x48",
+      },
+    ],
+    apple: [
+      {
+        url: "/images/shagnex.logo.png",
+        type: "image/png",
+        sizes: "1254x1254",
+      },
+    ],
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
